@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+usage () {
+    err "Set the current ser2net configuration:"
+    err "\`cat ser2net.yaml | sudo /snap/bin/ser2net.config-set\`"
+}
+
+err () {
+    echo "$1" >&2
+}
+
+if [ $(id -u) != 0 ]; then
+    err "Please re-run as root."
+    err
+    usage
+    exit 1
+fi
+
+cat - > $SNAP_DATA/etc/ser2net.yaml

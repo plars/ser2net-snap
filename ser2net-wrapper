@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+ser2net -u -d -c ${SNAP_DATA}/etc/ser2net.yaml

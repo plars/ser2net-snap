@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+cat $SNAP_DATA/etc/ser2net.yaml
