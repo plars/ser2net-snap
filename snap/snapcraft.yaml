@@ -9,13 +9,16 @@ description: |
   feature of some Cisco routers.
 
   You will need to connect the raw-usb interface using:
-      $ snap connect ser2net:raw-usb
+      $ sudo snap connect ser2net-plars:raw-usb
+
+  *note: If you are on classic and don't have a gadget with support for 
+         the serial-port interface, you should install with --classic
 
   Example usage:
-      $ ser2net.config-get > ser2net.yaml
+      $ ser2net-plars.config-get > ser2net.yaml
         <edit the config>
-      $ cat /tmp/ser2net.yaml |sudo /snap/bin/ser2net.config-set
-      $snap restart ser2net.ser2net
+      $ cat /tmp/ser2net.yaml |sudo /snap/bin/ser2net-plars.config-set
+      $ sudo snap restart ser2net-plars.ser2net
 confinement: strict
 grade: stable
 base: core
